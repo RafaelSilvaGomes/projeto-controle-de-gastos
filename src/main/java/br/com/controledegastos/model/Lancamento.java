@@ -1,4 +1,3 @@
-// src/main/java/br/com/controledegastos/model/Lancamento.java
 package br.com.controledegastos.model;
 
 import jakarta.persistence.*;
@@ -7,15 +6,12 @@ import java.time.LocalDate;
 
 @Entity
 public class Lancamento {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String descricao;
     private BigDecimal valor;
     private LocalDate data = LocalDate.now();
-
     @Enumerated(EnumType.STRING)
     private TipoLancamento tipo;
 
