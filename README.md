@@ -17,31 +17,6 @@ O objetivo principal é demonstrar uma arquitetura de software limpa (MVC), o po
 * **Tema Light/Dark**: Alterne entre os modos de visualização claro e escuro para maior conforto visual.
 * **Pronto para Deploy**: Containerizado com Docker e configurado para deploy fácil em plataformas como o Render.
 
-## 🏛️ Arquitetura do Projeto (MVC)
-
-A aplicação segue o padrão Model-View-Controller, garantindo uma separação clara de responsabilidades:
-
-```mermaid
-graph TD
-    subgraph Browser
-        A[👨‍💻 Usuário]
-    end
-
-    subgraph "Aplicação Spring Boot (Container Docker)"
-        C[LancamentoController] -- Usa --> D{LancamentoRepository}
-        D -- Gerencia --> E[Lancamento - Entidade]
-        C -- Renderiza --> B[View: Thymeleaf + htmx]
-    end
-
-    subgraph "Banco de Dados (Neon)"
-        F[(PostgreSQL)]
-    end
-
-    A <-->|Requisições HTTP| B
-    B -- Aciona via htmx --> C
-    E -- Mapeada para --> F
-```
-
 ## 🛠️ Tecnologias Utilizadas
 
 | Categoria      | Tecnologia                                       |
